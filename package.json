@@ -1,0 +1,38 @@
+{
+  "name": "xcss-inline-woff",
+  "version": "0.0.0",
+  "description": "Rework CSS transform to inline WOFF as base64 data URIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R specs specs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "andreypopp/rework-inline-woff"
+  },
+  "keywords": [
+    "rework",
+    "css",
+    "xcss",
+    "inline",
+    "woff",
+    "base64",
+    "data-uri",
+    "font",
+    "web-fonts"
+  ],
+  "author": "Andrey Popp <8mayday@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "semver": "~2.2.1",
+    "jshint": "~2.3.0",
+    "mocha": "~1.14.0",
+    "stream-aggregate-promise": "~0.1.2",
+    "xcss": "~0.11.0",
+    "font-awesome": "git+https://github.com/FortAwesome/Font-Awesome.git"
+  },
+  "dependencies": {
+    "kew": "~0.3.0"
+  }
+}
