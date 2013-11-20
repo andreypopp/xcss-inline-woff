@@ -11,7 +11,8 @@ function readFile() {
   return promise
 }
 
-var woffURL = /(url\(([^\)]*\.woff[^(url|format)\(]*)\))/
+var woffURI = /(url\(([^\)]*\.woff[^(url|format)\(]*)\))/;
+var dataURI = /url\(data:/;
 
 module.exports = function(style, ctx) {
 
@@ -21,7 +22,7 @@ module.exports = function(style, ctx) {
         var rm = [];
 
         var tasks = r.declarations.map(function(d, idx) {
-          var m = woffURL.exec(d.value);
+          var m = woffURI.exec(d.value);
           if (m) {
             return {
               declaration: d,
@@ -30,6 +31,8 @@ module.exports = function(style, ctx) {
                 .replace(/^'/, '')
                 .replace(/'$/, '')
             };
+          } else if (dataURI.exec(d.value)) {
+            // do nothing
           } else if (d.property === 'src') {
             rm.push(idx);
           }
