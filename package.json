@@ -1,6 +1,6 @@
 {
   "name": "xcss-inline-woff",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Rework CSS transform to inline WOFF as base64 data URIs",
   "main": "index.js",
   "scripts": {
